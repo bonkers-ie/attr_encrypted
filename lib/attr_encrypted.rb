@@ -223,7 +223,7 @@ module AttrEncrypted
   #   User.attr_encrypted?(:name)  # false
   #   User.attr_encrypted?(:email) # true
   def attr_encrypted?(attribute)
-    encrypted_attributes.has_key?(attribute.to_sym)
+    encrypted_attributes&.key?(attribute.to_sym)
   end
 
   # Decrypts a value for the attribute specified
